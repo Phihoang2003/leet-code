@@ -13,7 +13,8 @@ public class Main {
 //       System.out.println(longestCommonPrefix14(new String[]{"flower","flow","flight"}));
 //        System.out.println(isPalindrome125("A man, a plan, a canal: Panama"));
 //        System.out.println(strStr28("sadbutsad","sad"));
-        System.out.println(canConstruct383("aa","aab"));
+//        System.out.println(canConstruct383("aa","aab"));
+        System.out.println(isSubsequence392("axc","ahbgdc"));
     }
 
     public static int Roman13(String s) {
@@ -130,6 +131,18 @@ public class Main {
                 return false;
             }
             charCount[c-'a']--;
+        }
+        return true;
+    }
+    public static boolean isSubsequence392(String s, String t) {
+        int j=0;
+        for(int i=0;i<s.length();i++){
+            char c=s.charAt(i);
+            j=t.indexOf(c,j);
+            if(j==-1){
+                return false;
+            }
+            j++;
         }
         return true;
     }
