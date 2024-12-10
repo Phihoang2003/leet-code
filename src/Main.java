@@ -14,7 +14,8 @@ public class Main {
 //        System.out.println(isPalindrome125("A man, a plan, a canal: Panama"));
 //        System.out.println(strStr28("sadbutsad","sad"));
 //        System.out.println(canConstruct383("aa","aab"));
-        System.out.println(isSubsequence392("axc","ahbgdc"));
+//        System.out.println(isSubsequence392("axc","ahbgdc"));
+        System.out.println(isIsomorphic205("foo","bar"));
     }
 
     public static int Roman13(String s) {
@@ -143,6 +144,24 @@ public class Main {
                 return false;
             }
             j++;
+        }
+        return true;
+    }
+    public static boolean isIsomorphic205(String s, String t) {
+        if(s.length()!=t.length()){
+            return false;
+        }
+        int[] sMap=new int[256];
+        int[] tMap=new int[256];
+        for(int i=0;i<s.length();i++){
+            char c1=s.charAt(i);
+            char c2=t.charAt(i);
+            if(sMap[c1]==0 && tMap[c2]==0){
+                sMap[c1]=c2;
+                tMap[c2]=c1;
+            }else if(sMap[c1]!=c2 || tMap[c2]!=c1){
+                return false;
+            }
         }
         return true;
     }
